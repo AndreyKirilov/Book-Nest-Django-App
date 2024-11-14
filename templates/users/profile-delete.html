@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Profile</title>
+    <link rel="stylesheet" href="{% static 'css/base/navigation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/users/delete_page.css' %}">
+</head>
+<body>
+{% include 'base/navigation.html' %}
+
+<div class="delete-form-container">
+        <div class="form-container">
+        <h2 class="delete-title">Are you sure you want to delete your profile?</h2>
+        <form method="post" action="{% url 'user-delete-page' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="delete-button">Confirm</button>
+        </form>
+        </div>    
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="{% static 'css/base/navigation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/users/profile_page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/footer.css' %}">
+</head>
+<body>
+{% include 'base/navigation.html' %}
+
+<div class="profile-container">
+    {% if user.profile.profile_image %}
+        <img src="{{ user.profile.profile_image.url }}" alt="Profile Image" class="profile-image">
+    {% else %}
+        <img src="{% static 'images/default-profile-picture.webp' %}" alt="Image Unavailable" class="profile-image">
+    {% endif %}
+    
+    <div class="profile-info">
+        {% if user.profile.first_name or user.profile.last_name %}
+        <h2 class="profile-name">
+            {{ user.profile.first_name }} {% if user.profile.last_name %} {{ user.profile.last_name }} {% endif %}
+        </h2>
+        {% endif %}
+        
+        <p class="profile-email">{{ user.email }}</p>
+        <p class="profile-bio">{{ user.profile.bio|default:"No bio yet" }}</p>
+    </div>
+
+    <div class="profile-actions">
+            <a href="{% url 'user-edit-page' %}" class="btn edit-btn">Edit</a>
+            <a href="{% url 'user-delete-page' %}" class="btn delete-btn">Delete</a>
+    </div>
+</div>
+
+{% include 'base/footer.html' %}
+</body>
+</html>

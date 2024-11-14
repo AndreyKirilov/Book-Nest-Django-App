@@ -1,0 +1,7 @@
+Super user:
+    email: admin@gmail.com
+    password: 12345
+
+Staff user:
+    email: andrey@gmail.com
+    password: softuni1

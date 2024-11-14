@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/base/navigation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/users/edit_page.css' %}">
+    <title>Edit</title>
+</head>
+<body>
+{% include 'base/navigation.html' %}
+
+<div class="edit-form-container">
+        <div class="form-container">
+        <h2 class="edit-title">Edit Profile</h2>
+        <form class="edit-form" method="post" action="{% url 'user-edit-page' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="edit-button">Edit</button>
+        </form>
+        </div>    
+    </div>
+</body>
+</html>

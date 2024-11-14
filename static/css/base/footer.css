@@ -1,0 +1,14 @@
+footer{
+    padding: 20px 0;
+    font-size: 14px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content{
+    color: #d0d041;
+    max-width: 1200px;
+    margin: 0 auto;
+}

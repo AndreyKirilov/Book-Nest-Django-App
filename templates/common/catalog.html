@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="{% static 'css/base/navigation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home/catalog.css' %}">
+</head>
+<body>
+{% include 'base/navigation.html' %}
+
+<main>
+   {% if books %}
+   <h2>Books</h2>
+   <section id="catalog">
+   {% for book in books %}
+       <div class="book">
+           <img src="{{ book.cover_image }}" alt="Cover Unavailable">
+           <h3 class="title">{{ book.title }}</h3>
+           <p class="author">{{ book.author}}</p>
+           <a class="details-btn" href="#">View More</a>
+       </div>
+    {% endfor %}
+   {% else %}
+       <h2 class="no-books">No Books Available.</h2>
+   {% endif %}
+ 
+</section>       
+</main>
+</body>
+</html>

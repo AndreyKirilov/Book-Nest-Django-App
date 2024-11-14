@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logout</title>
+    <link rel="stylesheet" href="{% static 'css/base/navigation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/users/logout.css' %}">
+</head>
+<body>
+{% include 'base/navigation.html' %}
+
+    <div class="logout-form-container">
+        <div class="form-container">
+        <h2 class="logout-title">Are you sure you want to log out?</h2>
+        <form method="post" action="{% url 'user-logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="logout-button">Confirm</button>
+        </form>
+        </div>    
+    </div>
+
+</body>
+</html>
