@@ -21,4 +21,4 @@ This is Book Nest, an e-book application where you can explore your favourite bo
   !You can also use the register functionality, but it will create a Regular user which can be assigned as a Staff user from the Admin!
 
 ## Dependencies
-You can find all the project's dependencies in the "requirements.txt" file. Install them with the command "pip install requirements.txt".
+You can find all the project's dependencies in the "requirements.txt" file. Install them with the command "pip install -r requirements.txt".
