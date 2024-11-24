@@ -17,6 +17,7 @@ This is Book Nest, an e-book application where you can explore your favourite bo
   - Admin user: email: admin@gmail.com, password: 12345
   - Staff user: email: andrey@gmail.com, password: softuni1
   - Regular user: email: pesho@gmail.com, password: softuni2
+    
   !You can also use the register functionality, but it will create a Regular user which can be assigned as a Staff user from the Admin!
 
 ## Dependencies
