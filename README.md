@@ -8,8 +8,11 @@ This is Book Nest, an e-book application where you can explore your favourite bo
 
 ## In order to use the Book Nest app, follow the steps below:
 1.Clone the repository (git clone https://github.com/AndreyKirilov/Book-Nest-Django-App.git)
+
 2.Navigate to the project directory
+
 3.Set up virtual environment (python -m venv venv, venv\Scripts\activate)
+
 4.The user's credentials are located in the 'users' file of the project, but you can also view them here:
   - Admin user: email: admin@gmail.com, password: 12345
   - Staff user: email: andrey@gmail.com, password: softuni1
