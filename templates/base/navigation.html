@@ -7,6 +7,7 @@
     <div class="auth-link">
             {% if request.user.is_staff %}
             <a href="{% url 'book-create' %}">Add Book</a>
+             <a href="{% url 'author-create' %}">Add Author</a>    
             {% endif %}   
     </div>
   </div>
@@ -18,6 +19,7 @@
   <div class="right-section">
     {% if user.is_authenticated %}
         <div class="auth-link">
+            <a href="{% url 'favourites' %}">Wishlist</a>
             <a href="{% url 'catalog' %}">Catalogue</a>
             <a href="{% url 'user-profile-page' %}">Profile</a>
             <a href="{% url 'user-logout' %}">Logout</a>

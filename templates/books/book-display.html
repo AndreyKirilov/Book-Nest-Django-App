@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Display</title>
+    <link rel="stylesheet" href="{% static 'css/base/navigation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/books/book-display.css' %}">
+</head>
+<body>
+    {% include 'base/navigation.html' %}
+
+    <div class="book-detail-container">
+        
+        <div class="book-cover">
+            <img src="{{ book.cover_image.url }}" alt="Image Unavailable">
+        </div>
+        
+        <div class="book-info">
+            <h1>{{ book.title }}</h1>
+            <p><strong>Author: {{ book.author }}</strong></p>
+            <p><strong>Description: {{ book.description }}</strong></p>
+            <p><strong>Publication Date: {{ book.publication_date }}</strong></p>
+            <a href="{% url 'review-page' book.pk %}"><button class="review-add-button">Add Review</button></a>
+            <a href="{% url 'favourites_add' book.pk %}"><button class="heart-btn">Add to Favourites</button></a>
+        </div>
+    </div>
+
+    <div class="reviews-container">
+        <h3>Reviews</h3>
+        <div class="reviews-list">
+            {% for review in book.book_reviews.all %}
+                <div class="review-item">
+                    <div>
+                        {% if review.user.profile.profile_image %}
+                            <img src="{{ review.user.profile.profile_image.url }}" alt="Profile Picture" class="profile-image">
+                        {% else %}
+                            <img src="{% static 'images/default-profile-picture.webp' %}" alt="Default Profile" class="profile-image">
+                        {% endif %}
+                    </div>
+                    <div class="review-content">
+                        <p><strong>{{ review.user.profile.first_name }} {{ review.user.profile.last_name }}</strong></p>
+                        <p>{{ review.body }}</p>
+                        <p><small>Posted on {{ review.created_at }}</small></p>
+                    </div>
+                    <div class="review-actions">
+                        {% if request.user == review.user or request.user.is_staff %}
+                            <a href="{% url 'review-edit' review.pk %}"><button class="edit">Edit</button></a>
+                            <a href="{% url 'review-delete' review.pk %}"><button class="delete">Delete</button></a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% empty %}
+                <p class="no-reviews">No reviews yet. Be the first to review!</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

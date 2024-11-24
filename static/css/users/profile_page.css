@@ -12,12 +12,12 @@ body{
 .profile-container {
     width: 300px;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 80px;
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .profile-image {

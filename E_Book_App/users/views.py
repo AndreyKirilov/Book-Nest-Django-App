@@ -1,11 +1,10 @@
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import redirect, render, get_object_or_404
+from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, UpdateView, DetailView
+from django.views.generic import CreateView
 from django.contrib.auth.views import LoginView
 from .forms import AppUserForm, LogoutUserForm, EditUserForm, DeleteUserForm
-from .models import AppUser, Profile
 
 
 class RegisterUserView(CreateView):
@@ -61,7 +60,6 @@ def profile_delete_view(request):
     form = DeleteUserForm(request.POST or None)
 
     if request.method == 'POST' and form.is_valid():
-        user_profile = user.profile
         user.delete()
         logout(request)
         return redirect('index')

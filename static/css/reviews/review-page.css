@@ -1,0 +1,59 @@
+body{
+    background-color: #151515;
+    margin: 0;
+    padding: 0;
+    font-family: Calibri, sans-serif;
+    min-height: 100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.form-container{
+    border-radius: 10px;
+    width: 500px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    height: auto;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8),
+                0 0 20px 10px rgba(255, 255, 255, 0.5),
+                0 0 30px 15px rgba(255, 255, 255, 0.3);
+}
+
+.review-title{
+    font-size: 32px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
+
+.review-form input[type="text"],
+.review-form input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #151515;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.review-button{
+    margin-left: 120px;
+    margin-top: 20px;
+    width: 300px;
+    padding: 10px;
+    background-color: #151515;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.review-button:hover{
+    transition: 0.5s ease;
+    background-color: #d0d041;
+    color: #151515;
+}

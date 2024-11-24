@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review Page</title>
+    <link rel="stylesheet" href="{% static 'css/base/navigation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/reviews/review-page.css' %}">
+</head>
+<body>
+{% include 'base/navigation.html' %}
+
+    <div class="review-form-container">
+        <div class="form-container">
+            <h2 class="review-title">Add Your Review</h2>
+            <form class="review-form" method="post" action="{% url 'review-page' book.pk %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="review-button">Submit Review</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

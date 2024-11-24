@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review Delete</title>
+    <link rel="stylesheet" href="{% static 'css/base/navigation.css'%}">
+    <link rel="stylesheet" href="{% static  'css/reviews/review-page.css'%}">
+</head>
+<body>
+{% include 'base/navigation.html' %}
+     <div class="review-form-container">
+        <div class="form-container">
+            <h2 class="review-title">Are you sure you want to delete your review?</h2>
+            <form class="review-form" method="post" action="{% url 'review-delete' review.pk %}">
+                {% csrf_token %}
+                <button type="submit" class="review-button">Delete Review</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

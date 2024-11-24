@@ -8,7 +8,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('E_Book_App.common.urls')),
     path('users/', include('E_Book_App.users.urls')),
-    path('books/', include('E_Book_App.books.urls'))
+    path('books/', include('E_Book_App.books.urls')),
+    path('favourites/', include('E_Book_App.favourites.urls')),
+    path('reviews/', include('E_Book_App.reviews.urls')),
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,66 @@
+body{
+    background-color: #151515;
+    margin: 0;
+    padding: 0;
+    font-family: Calibri, sans-serif;
+    min-height: 100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.book-form-container {
+    background-color: #151515;
+    padding: 20px;
+    max-width: 200px;
+    margin: 150px auto;
+    color: white;
+}
+
+.form-container{
+    border-radius: 10px;
+    width: 100%;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    height: auto;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8),
+                0 0 20px 10px rgba(255, 255, 255, 0.5),
+                0 0 30px 15px rgba(255, 255, 255, 0.3);
+}
+
+.book-create-title{
+    font-size: 32px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
+
+.book-create-form input[type="text"]{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #151515;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.create-button{
+    margin-left: 13px;
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background-color: #151515;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.create-button:hover{
+    transition: 0.5s ease;
+    background-color: #d0d041;
+    color: #151515;
+}

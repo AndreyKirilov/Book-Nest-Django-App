@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/base/navigation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/books/author-create.css' %}">
+</head>
+<body>
+{% include 'base/navigation.html' %}
+
+<div class="author-form-container">
+    <div class="form-container">
+         <h2 class="author-create-title">Create Author</h2>
+         <form class="author-create-form" method="post" action="{% url 'author-create' %}">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="create-button" >Create</button>
+         </form>
+    </div>   
+    </div> 
+</body>
+</html>

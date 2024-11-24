@@ -1,64 +1,96 @@
-body {
+body{
+    background-color: #151515;
     margin: 0;
     padding: 0;
-    background-color: #151515;
-    display: flex;
-    flex-direction: column;
-}
-
-main{
-    flex: 1;
-    padding: 20px;
-    margin-top: 60px;
-    display: flex;
+    font-family: Calibri, sans-serif;
+    min-height: 100vh;
     justify-content: center;
+    display: flex;
+    align-items: center;
 }
 
-#catalog{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 1200px;
+.catalog-container {
+    margin-top: 130px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 100px;
+    padding: 20px;
+}
+
+.book-card {
+    height: 400px;
+    width: 220px;
+    background-color: #151515;
+    border: 1px solid white;
+    border-radius: 8px;
+    overflow: hidden;
+     box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8),
+                0 0 20px 10px rgba(255, 255, 255, 0.5),
+                0 0 30px 15px rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+
+/* Book cover image */
+.book-cover {
     width: 100%;
-    margin: 0 auto;
+    height: 250px;
+    object-fit: cover;
 }
 
-.book img{
-    max-width: 100%;
-    border-radius: 4px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.title{
-    font-size: 1.2em;
+/* Book title */
+.book-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
     margin: 10px 0 5px;
 }
 
-.author{
-    font-size: 1em;
-    color: white;
-    margin-bottom: 10px;
+/* Book author */
+.book-author {
+    font-size: 14px;
+    color: #626262;
+    margin-bottom: 15px;
 }
 
-.details-btn{
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #d0d041;
-    color: black;
+/* Container for buttons */
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+/* View More button */
+.view-more-btn {
     text-decoration: none;
-    border-radius: 4px;
+    color: white;
+    background-color: #151515;
+    padding: 8px 15px;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: 14px;
     transition: background-color 0.5s;
 }
 
-.details-btn:hover{
-    background-color: #262626;
+.view-more-btn:hover {
+    background-color: #d0d041;
+    color: #151515;
 }
 
-.no-books{
-    text-align: center;
-    font-size: 45px;
+.heart-btn{
+    width: 30px;
+    height: 30px;
+    margin-top: 3px;
+    border: 1px solid white;
+    border-radius: 7px;
+    background-color: #151515;
+    font-size: 18px;
     color: white;
-    margin-top: 200px;
+    cursor: pointer;
+    transition: color 0.5s;
+}
 
+.heart-btn:hover {
+    color: #151515;
+    background-color: #d0d041;
 }

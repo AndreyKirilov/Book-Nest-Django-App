@@ -10,23 +10,18 @@
 <body>
 {% include 'base/navigation.html' %}
 
-<main>
-   {% if books %}
-   <h2>Books</h2>
-   <section id="catalog">
+   <div class="catalog-container">
    {% for book in books %}
-       <div class="book">
-           <img src="{{ book.cover_image }}" alt="Cover Unavailable">
-           <h3 class="title">{{ book.title }}</h3>
-           <p class="author">{{ book.author}}</p>
-           <a class="details-btn" href="#">View More</a>
+       <div class="book-card">
+           <img class="book-cover" src="{{ book.cover_image.url}}" alt="Cover Unavailable">
+           <h3 class="book-title">{{ book.title }}</h3>
+           <p class="book-author">{{ book.author}}</p>
+           <div class="button-container">
+               <a href="{% url 'book-details' book.pk %}"><button class="view-more-btn">View More</button></a>
+               <a href="{% url 'favourites_add' book.pk %}"><button class="heart-btn">&hearts;</button></a>
+           </div>
        </div>
     {% endfor %}
-   {% else %}
-       <h2 class="no-books">No Books Available.</h2>
-   {% endif %}
- 
-</section>       
-</main>
+   </div>
 </body>
 </html>

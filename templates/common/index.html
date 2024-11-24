@@ -19,7 +19,11 @@
         {% if not request.user.is_authenticated %}
        <h2>Welcome to The World of Books</h2>
         {% else %}
-        <h2>Welcome back</h2>
+        {% if request.user.is_superuser %}
+            <h2>Welcome back, admin</h2>
+        {% else %}    
+            <h2>Welcome back, {{ request.user.profile.first_name }}</h2>
+        {% endif %}    
         {% endif %}
     </div>
  

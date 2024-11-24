@@ -1,19 +1,37 @@
 from django.contrib.auth.decorators import user_passes_test
+from django.http import HttpResponseForbidden
 from django.shortcuts import render, redirect
-from .forms import CreateBookForm
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, DetailView
+from .forms import CreateBookForm, CreateAuthorForm
+from .models import Author, Book
 
 
-def is_staff_or_superuser(user):
-    return user.is_staff or user.is_superuser
+class CreateBookView(CreateView):
+    model = Book
+    form_class = CreateBookForm
+    template_name = 'books/book-create.html'
+    success_url = reverse_lazy('catalog')
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_staff and not request.user.is_superuser:
+            return HttpResponseForbidden()
+        return super().dispatch(request, *args, **kwargs)
 
 
-@user_passes_test(is_staff_or_superuser)
-def create_book_view(request):
-    form = CreateBookForm(request.POST or None, request.FILES or None)
+class CreateAuthorView(CreateView):
+    model = Author
+    form_class = CreateAuthorForm
+    template_name = 'books/author-create.html'
+    success_url = reverse_lazy('catalog')
 
-    if request.method == 'POST' and form.is_valid():
-        form.save()
-        return redirect('catalog')
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_staff and not request.user.is_superuser:
+            return HttpResponseForbidden()
+        return super().dispatch(request, *args, **kwargs)
 
-    context = {'form': form}
-    return render(request, 'books/book-create.html', context=context)
+
+class DetailBookView(DetailView):
+    model = Book
+    template_name = 'books/book-display.html'
+    context_object_name = 'book'

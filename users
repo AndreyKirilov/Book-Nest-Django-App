@@ -5,3 +5,7 @@ Super user:
 Staff user:
     email: andrey@gmail.com
     password: softuni1
+
+Regular user:
+    email: pesho@gmail.com
+    password: softuni2

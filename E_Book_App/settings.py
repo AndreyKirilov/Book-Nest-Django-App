@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'E_Book_App.common',
     'E_Book_App.favourites',
     'E_Book_App.reviews',
+    'rest_framework'
 
 ]
 
