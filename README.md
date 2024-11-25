@@ -22,3 +22,12 @@ This is Book Nest, an e-book application where you can explore your favourite bo
 
 ## Dependencies
 You can find all the project's dependencies in the "requirements.txt" file. Install them with the command "pip install -r requirements.txt".
+
+## Project Credentials
+ - SECRET_KEY - 'django-insecure-r41ktjr+jx^6c8&awvybxorshs7h8&u1!z#8j$4yz3jj#41!-g'
+ - DEBUG = True
+ - DB_NAME = 'book_nest_db'
+ - DB_USER = 'postgres'
+ - DB_PASSWORD = 'Andreicho_06'
+ - DB_HOST = 'localhost'
+ - DB_PORT = '5432'
