@@ -1,6 +1,5 @@
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from django.views.generic import ListView
 
 from E_Book_App.books.models import Book
@@ -23,6 +22,5 @@ class FavouritesView(LoginRequiredMixin, ListView):
 
 
 def remove_from_wishlist_view(request, book_id):
-    book = Book.objects.get(pk=book_id)
-    Favourites.objects.filter(book=book).delete()
+    Favourites.objects.get(book_id=book_id).delete()
     return redirect('favourites')

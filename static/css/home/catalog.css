@@ -10,7 +10,7 @@ body{
 }
 
 .catalog-container {
-    margin-top: 130px;
+    margin-top: 150px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -31,14 +31,12 @@ body{
     text-align: center;
 }
 
-/* Book cover image */
 .book-cover {
     width: 100%;
     height: 250px;
     object-fit: cover;
 }
 
-/* Book title */
 .book-title {
     font-size: 18px;
     font-weight: bold;
@@ -46,21 +44,18 @@ body{
     margin: 10px 0 5px;
 }
 
-/* Book author */
 .book-author {
     font-size: 14px;
     color: #626262;
     margin-bottom: 15px;
 }
 
-/* Container for buttons */
 .button-container {
     display: flex;
     justify-content: space-around;
     padding: 10px 0;
 }
 
-/* View More button */
 .view-more-btn {
     text-decoration: none;
     color: white;

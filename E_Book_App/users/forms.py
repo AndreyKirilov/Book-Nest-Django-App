@@ -37,10 +37,7 @@ class LogoutUserForm(forms.Form):
 
 
 class EditUserForm(forms.ModelForm):
-    first_name = forms.CharField(max_length=30)
-    last_name = forms.CharField(max_length=50)
     bio = forms.CharField(max_length=500, required=False)
-    profile_image = forms.ImageField(required=False)
 
     class Meta:
         model = Profile

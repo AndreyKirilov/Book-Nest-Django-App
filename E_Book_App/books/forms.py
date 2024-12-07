@@ -10,7 +10,7 @@ class CreateBookForm(forms.ModelForm):
             'title': forms.TextInput(attrs={'placeholder': 'Book Title'}),
             'author': forms.TextInput(attrs={'placeholder': "Book Author's pk"}),
             'description': forms.TextInput(attrs={'placeholder': 'Book Description'}),
-            'publication_date': forms.DateInput(attrs={'placeholder': "Book's Publication Date"}),
+            'publication_date': forms.DateInput(attrs={'placeholder': "Book's Publication Date", 'type': 'date'}),
             'cover_image': forms.FileInput(attrs={'placeholder': 'Book Cover Image'})
         }
 

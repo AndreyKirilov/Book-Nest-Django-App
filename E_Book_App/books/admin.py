@@ -6,7 +6,7 @@ from E_Book_App.books.models import Author, Book
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ['name', 'bio']
-    list_filter = ['name']
+    list_filter = ['id', 'name']
 
 
 @admin.register(Book)
