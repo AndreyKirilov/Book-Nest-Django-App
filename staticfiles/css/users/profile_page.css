@@ -1,0 +1,91 @@
+body{
+    background-color: #151515;
+    margin: 0;
+    padding: 0;
+    font-family: Calibri, sans-serif;
+    min-height: 100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.profile-container {
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 80px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.profile-info {
+    margin-top: 10px;
+}
+
+.profile-name {
+    color: white;
+    font-size: 1.5em;
+    margin: 0;
+    font-weight: bold;
+}
+
+.profile-email {
+    font-size: 1em;
+    color: #555;
+    margin-top: 10px;
+}
+
+.profile-bio {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.profile-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.5s ease;
+}
+
+.edit-btn {
+    background-color: #151515;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #d0d041;
+    color: #151515
+}
+
+.delete-btn {
+    background-color: #151515;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #d0d041;
+    color: #151515;
+}
