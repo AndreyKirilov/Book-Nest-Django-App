@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['127.0.0.1', 'book-nest.azurewebsites.net']
+ALLOWED_HOSTS = ['127.0.0.1', 'http://book-nest-cjgdfjg8b7habagx.italynorth-01.azurewebsites.net/']
 
 CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', cast=Csv())
 
